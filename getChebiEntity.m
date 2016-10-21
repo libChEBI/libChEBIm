@@ -13,7 +13,8 @@ function chebiEntity = getChebiEntity(id)
     end
 
     if ~found_libchebi
-        javaaddpath('libChEBIj-1.0.0.jar');
+	folder = which('libChEBIj-1.0.0.jar');
+        javaaddpath(folder);
     end
     
     chebiEntity = javaObject('uk.ac.manchester.libchebi.ChebiEntity', id);
